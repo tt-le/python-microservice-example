@@ -3,8 +3,8 @@ SCRIPTPATH="$(
     pwd -P
 )"
 
-cd "$SCRIPTPATH"/hello_service && docker build -t helloapp .
+docker build -t helloapp "$SCRIPTPATH"/hello_service
 
-cd "$SCRIPTPATH"/goodbye_service && docker build -t goodbyeapp .
+docker build -t goodbyeapp "$SCRIPTPATH"/goodbye_service
 
-cd "$SCRIPTPATH" && docker-compose up
+docker-compose up
