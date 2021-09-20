@@ -1,0 +1,20 @@
+version: '3'
+services:
+  lb:
+    image: haproxy
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./haproxy:/usr/local/etc/haproxy
+  flaskapp1:
+    image: flaskapp
+    environment: 
+      - APPID=1111
+  flaskapp2:
+    image: flaskapp
+    environment: 
+      - APPID=2222
+  flaskapp3:
+    image: flaskapp
+    environment: 
+      - APPID=3333
