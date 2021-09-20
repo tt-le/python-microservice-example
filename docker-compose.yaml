@@ -3,18 +3,22 @@ services:
   lb:
     image: haproxy
     ports:
-      - "8080:8080"
+      - 8080:8080
     volumes:
-      - ./haproxy:/usr/local/etc/haproxy
-  flaskapp1:
-    image: flaskapp
+      - ./haproxy/:/usr/local/etc/haproxy
+  helloapp1:
+    image: helloapp
     environment: 
       - APPID=1111
-  flaskapp2:
-    image: flaskapp
+  helloapp2:
+    image: helloapp
     environment: 
       - APPID=2222
-  flaskapp3:
-    image: flaskapp
+  goodbyeapp1:
+    image: goodbyeapp
     environment: 
       - APPID=3333
+  goodbyeapp2:
+    image: goodbyeapp
+    environment: 
+      - APPID=4444
